@@ -13,10 +13,11 @@ const printSuccess = (message) => {
 const printHelp = () => {
   console.log(
     dedent`${chalk.bgCyanBright("  HELP  ")}
-    Без параметров - вывод погоды
-    -s [CITY] для установки Города
-    -h для вывода помощи
-    -token [API_KEY] для сохранения токена
+    No parameters - weather output
+    -s [CITY] to set City
+    -h to display help
+    -token [API_KEY] save the token
+    -w how to setup
     `
   );
 };
@@ -24,9 +25,20 @@ const printHelp = () => {
 const printInfo = () => {
   console.log(
     dedent`${chalk.bgYellow("  INFO  ")}
-    Файл был ранее поврежден,
-    после чего удален, и создан новый.`
+    The file was previously damaged,
+    then removed and a new one created.`
   );
 };
 
-export { printError, printSuccess, printHelp, printInfo };
+const printSetup = () => {
+  console.log(
+    dedent`${chalk.bgGray("       SETUP       ")}
+    You must obtain a token from the ${chalk.blue("openweathermap.org")} 
+    service and pass it to the command line, with command
+    ${chalk.yellowBright("-token [API_KEY]")}. Then you get access to the functionality. 
+    ${chalk.bgGray("  Have a nice day   ")}
+    `
+  );
+};
+
+export { printError, printSuccess, printHelp, printInfo, printSetup };
