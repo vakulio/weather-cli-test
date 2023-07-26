@@ -3,11 +3,11 @@ import chalk from "chalk";
 import dedent from "dedent";
 
 const printError = (error) => {
-  console.log(chalk.bgRed("Error") + " " + error);
+  console.log(chalk.bgRed("  Error  ") + " " + error);
 };
 
 const printSuccess = (message) => {
-  console.log(chalk.bgBlue("Success") + " " + message);
+  console.log(chalk.bgBlue("  Success  ") + " " + message);
 };
 
 const printHelp = () => {
@@ -21,4 +21,12 @@ const printHelp = () => {
   );
 };
 
-export { printError, printSuccess, printHelp };
+const printInfo = () => {
+  console.log(
+    dedent`${chalk.bgYellow("  INFO  ")}
+    Файл был ранее поврежден,
+    после чего удален, и создан новый.`
+  );
+};
+
+export { printError, printSuccess, printHelp, printInfo };

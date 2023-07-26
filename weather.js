@@ -2,6 +2,7 @@
 
 import { printHelp } from "./services/log.service.js";
 import { program } from "commander";
+import { saveToken } from "./services/storage.service.js";
 
 const initCLI = () => {
   program
@@ -14,6 +15,6 @@ const initCLI = () => {
 
   if (options.town) console.log(`Save ${options.town}`);
 
-  if (options.token) console.log(`Save ${options.token}`);
+  if (options.token) return saveToken(options.token);
 };
 initCLI();
