@@ -8,7 +8,7 @@
   },
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepare": "npx prettier --write . && eslint --fix ."
   },
   "keywords": [
     "cli",
@@ -23,6 +23,8 @@
     "dedent": "^0.7.0"
   },
   "devDependencies": {
-    "@types/dedent": "^0.7.0"
+    "@types/dedent": "^0.7.0",
+    "eslint": "^8.45.0",
+    "husky": "^8.0.3"
   }
 }
